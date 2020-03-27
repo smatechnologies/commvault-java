@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="com.sma.ui.extensions.jobdetail">
+      <jobDetail
+            class="com.sma.ui.core.jobdetails.windows.WindowsJobDetailsExtension"
+            id="WINDOWS">
+         <jobSubDetail
+               class="com.sma.ui.core.jobdetails.commvault.CommVaultSubJobDetailExtension"
+               id="Commvault"
+               name="Commvault">
+         </jobSubDetail>
+      </jobDetail>
+   </extension>
+
+</plugin>
