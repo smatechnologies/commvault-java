@@ -28,7 +28,7 @@
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
     <property name="https.protocols" value="TLSv1.2"/>
-    <property name="classworlds.conf" value="C:\java_projects_1.8\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf6485413305942849815.tmp"/>
+    <property name="classworlds.conf" value="C:\java_projects_1.8\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf1798328374409404801.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Java\jdk1.8.0_162\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Java/jdk1.8.0_162/bin/../jre/bin/server;C:/Java/jdk1.8.0_162/bin/../jre/bin;C:/Java/jdk1.8.0_162/bin/../jre/lib/amd64;C:\java\AdoptOpenJDK\jdk-11.0.6.10-hotspot\bin;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\apache-maven-3.6.2\bin;C:\Program Files (x86)\Common Files\Acronis\SnapAPI\;C:\Program Files (x86)\Airtame;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\bvanhinsbergen\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit\;;C:\eclipse42_64_520;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>

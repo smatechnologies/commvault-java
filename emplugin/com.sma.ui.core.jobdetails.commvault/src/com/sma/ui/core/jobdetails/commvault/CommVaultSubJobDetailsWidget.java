@@ -45,7 +45,7 @@ import com.sma.ui.core.widgets.validation.ValidationMessage;
 
 public class CommVaultSubJobDetailsWidget extends AbstractWindowsSubJobDetailsWidget {
 
-	private static final String COMMAND_SUFFIX = SystemConstants.BACK_SLASH + "SMACVault.exe"; //$NON-NLS-1$
+	private static final String COMMAND_SUFFIX = SystemConstants.BACK_SLASH + "CVault.exe"; //$NON-NLS-1$
 
 	private CTabFolder2 _folder;
 	private CTabItem _jobDefinitionTab;

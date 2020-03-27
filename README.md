@@ -10,21 +10,16 @@ SMA Technologies assumes no liability for damage caused by the usage of any of t
 
 - Requires Commvault web services which is provided by Commvault version 11. 
 - Requires **Java version 8**.
-  - can download OpenJDK 8 from https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot
-    please note when downloading the jdk, do not select the .msi file to download as this will
-    install the jdk on teh Windows system. You should download the .zip file (select other
-    platforms) as you need to unzip the downloaded file into the /java directory.
+  - Embedded OpenJDK included in installation zip file.
 
 # Instructions
 For information on using the Connector and configuring the connector see the
 associated documentation.
 
 ### Installation
-Download software from desired Release by selecting and saving the executables.
-After download create folder and place executables in the folder <install folder>.
-After downloading the OpenJDK or JRE, create a <install folder>/java directory off the folder you saved
-the executables in.
-Extract the Java software and copy this to the <install folder>/java directory.
+Download the commvalut.zip file from desired Release by selecting and saving the file.
+After download create an installation folder (i.e c:\connectors\commvault) and extract the 
+downloaded file into this directory.
  
 # License
 Copyright 2019 SMA Technologies

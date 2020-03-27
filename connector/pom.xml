@@ -21,26 +21,7 @@
       	<name>central maven repo https</name>
       	<url>https://repo.maven.apache.org/maven2</url>
     </repository>
-	<repository>
-		<id>sma-releases</id>
-		<url>${nexus.base.url}/repositories/releases/</url>
-	</repository>
-	<repository>
-		<id>sma-snapshots</id>
-		<url>${nexus.base.url}/repositories/snapshots/</url>
-	</repository>
   </repositories>
-
-  <distributionManagement>
-	<repository>
-		<id>sma-releases</id>
-		<url>https://guru.smasolutionsit.com:4343/nexus/content/repositories/releases</url>
-	</repository>
-	<snapshotRepository>
-		<id>sma-snapshots</id>
-		<url>https://guru.smasolutionsit.com:4343/nexus/content/repositories/snapshots</url>
-	</snapshotRepository>
-  </distributionManagement>
 
   <dependencies>
     <dependency>
@@ -220,7 +201,7 @@
         		<configuration>
           			<transformers>
             			<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-              				<mainClass>com.sma.commvault.connector.impl.CommVaultConnector</mainClass>
+              				<mainClass>opcon.commvault.connector.impl.CommVaultConnector</mainClass>
             			</transformer>
           			</transformers>
 		  			<filters>
@@ -251,7 +232,7 @@
               				<outfile>${project.basedir}/Release/CVault.exe</outfile>
 							<jar>${project.build.directory}/${project.artifactId}.jar</jar>
 			        		<classPath>
-			          			<mainClass>com.sma.commvault.connector.impl.CommVaultConnector</mainClass>
+			          			<mainClass>opcon.commvault.connector.impl.CommVaultConnector</mainClass>
 			        		</classPath>
 			        		<jre>
 			          			<path>./java</path>
@@ -269,7 +250,7 @@
               				<outfile>${project.basedir}/Release/Encrypt.exe</outfile>
 							<jar>${project.build.directory}/${project.artifactId}.jar</jar>
 			        		<classPath>
-			          			<mainClass>com.sma.commvault.connector.impl.EncryptValue</mainClass>
+			          			<mainClass>opcon.commvault.connector.impl.EncryptValue</mainClass>
 			        		</classPath>
 			        		<jre>
 			          			<path>./java</path>
