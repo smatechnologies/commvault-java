@@ -52,7 +52,7 @@ jobs:
         with:
           args: zip -qq -r ./CommVault_Windows.zip ./CommVault_Windows
       
-      # Upload the opconcli.exe binary file as artifact
+      # Upload the CVault.exe binary file as artifact
       - uses: actions/upload-artifact@v1
         with:
           name: CVault.exe
@@ -64,7 +64,7 @@ jobs:
           name: EncryptValue.exe
           path: commvault-dist/EncryptValue.exe
 
-      # Upload the OpConCLI.zip file as artifact
+      # Upload the CommVault_Windows.zip file as artifact
       - uses: actions/upload-artifact@v1
         with:
           name: CommVault_Windows.zip
