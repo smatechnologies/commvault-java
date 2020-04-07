@@ -26,8 +26,7 @@ jobs:
           
       # Build the maven project, output into ./commvault-dist/
       - name: Build
-        run: cd connector
-             mvn clean package
+        run: mvn clean package
       
       # Download the latest GA OpenJDK JRE 11 from AdoptOpenJDK for Windows x64
       - name: Get Java 11 JRE for Windows x64
