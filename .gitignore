@@ -1,7 +1,7 @@
-/connector/src/target
+/connector/target/
 /connector/.settings
 /connector/.classpath
 /connector/.project
 /connector/dependency-reduced-pom.xml
-/emplugin/bin
-/opcon-rest-api-client.iml
+/emplugin/bin/
+
