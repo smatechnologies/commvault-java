@@ -13,6 +13,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jcommander.version>1.72</jcommander.version>
+    <java.version>11</java.version>
+	<release.dir>${project.basedir}/commvault-dist</release.dir>
   </properties>
 
   <repositories>
@@ -158,78 +160,79 @@
   <build>
       <finalName>${project.artifactId}</finalName>
        	<plugins>
-     		<plugin>
-      			<groupId>org.apache.maven.plugins</groupId>
-    			<artifactId>maven-compiler-plugin</artifactId>
-    			<version>2.3</version>
-    			<configuration>
-    	  			<source>1.8</source>
-    	  			<target>1.8</target>
-          			<fork>true</fork>
-          			<executable>${java.home}/../bin/javac</executable>
-          			<compilerArgument>-proc:none</compilerArgument>
-    			</configuration>
-      		</plugin>
-	  		<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>2.5</version>
-				<configuration>
-					<filesets>
-						<fileset>
-							<directory>${project.basedir}/Release</directory>
-							<includes>
-								<include>Connector.config</include>
-								<include>CVault.exe</include>
-							</includes>
-						</fileset>
-					</filesets>
-				</configuration>
-	  		</plugin>
-      		<plugin>
-		        <groupId>org.apache.maven.plugins</groupId>
-        		<artifactId>maven-shade-plugin</artifactId>
-    			<version>2.3</version>
-        		<executions>
-          			<execution>
-            			<phase>package</phase>
-            			<goals>
-              				<goal>shade</goal>
-            			</goals>
-          			</execution>
-        		</executions>
-        		<configuration>
-          			<transformers>
-            			<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-              				<mainClass>opcon.commvault.connector.impl.CommVaultConnector</mainClass>
-            			</transformer>
-          			</transformers>
-		  			<filters>
-		    			<filter>
-		      				<artifact>*:*</artifact>
-		      				<excludes>
-		        				<exclude>META-INF/*.SF</exclude>
-		        				<exclude>META-INF/*.DSA</exclude>
-		        				<exclude>META-INF/*.RSA</exclude>
-		      				</excludes>
-		    			</filter>
-		  			</filters>
-        		</configuration>
-      		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.8.0</version>
+			<configuration>
+				<release>${java.version}</release>
+			</configuration>
+		</plugin>
+   		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-clean-plugin</artifactId>
+			<version>2.5</version>
+			<configuration>
+				<filesets>
+					<fileset>
+						<directory>${release.dir}</directory>
+						<includes>
+							<include>*.*</include>
+						</includes>
+					</fileset>
+				</filesets>
+			</configuration>
+  		</plugin>	
+      	<plugin>
+        	<groupId>org.apache.maven.plugins</groupId>
+        	<artifactId>maven-shade-plugin</artifactId>
+    		<version>3.1.0</version>
+        	<executions>
+          		<execution>
+            		<phase>package</phase>
+            		<goals>
+              			<goal>shade</goal>
+            		</goals>
+          		</execution>
+        	</executions>
+        	<configuration>
+                  <createDependencyReducedPom>false</createDependencyReducedPom>
+                  <transformers>
+                      <transformer
+                              implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                      <transformer
+                              implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                          <manifestEntries>
+                              <Main-Class>opcon.commvault.connector.impl.CommVaultConnector</Main-Class>
+                          </manifestEntries>
+                      </transformer>
+                  </transformers>
+                  <filters>
+                      <filter>
+                          <artifact>*:*</artifact>
+                          <excludes>
+                              <exclude>META-INF/*.SF</exclude>
+                              <exclude>META-INF/*.DSA</exclude>
+                              <exclude>META-INF/*.RSA</exclude>
+                          </excludes>
+                      </filter>
+                  </filters>
+        	</configuration>
+      	</plugin>
      		<plugin>
     	  		<groupId>com.akathist.maven.plugins.launch4j</groupId>
     	  		<artifactId>launch4j-maven-plugin</artifactId>
-    	  		<version>1.5.2</version>
+    	  		<version>1.7.25</version>
     	  		<executions>
     	    		<execution>
-            			<id>l4j-connector</id>
+            			<id>l4j-cvault</id>
             			<phase>package</phase>
             			<goals>
               				<goal>launch4j</goal>
             			</goals>
             			<configuration>
               				<headerType>console</headerType>
-              				<outfile>${project.basedir}/Release/CVault.exe</outfile>
+              				<outfile>${release.dir}/CVault.exe</outfile>
 							<jar>${project.build.directory}/${project.artifactId}.jar</jar>
 			        		<classPath>
 			          			<mainClass>opcon.commvault.connector.impl.CommVaultConnector</mainClass>
@@ -247,7 +250,7 @@
             			</goals>
             			<configuration>
               				<headerType>console</headerType>
-              				<outfile>${project.basedir}/Release/Encrypt.exe</outfile>
+              				<outfile>${release.dir}/EncryptValue.exe</outfile>
 							<jar>${project.build.directory}/${project.artifactId}.jar</jar>
 			        		<classPath>
 			          			<mainClass>opcon.commvault.connector.impl.EncryptValue</mainClass>
@@ -261,14 +264,14 @@
       		</plugin> 
  	  		<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.7</version>
+				<version>1.8</version>
 				<executions>
 		  			<execution>
 						<id>copy-install</id>
 						<phase>prepare-package</phase>
 						<configuration>
 			  				<target>
-                				<copy file="${project.basedir}/src/main/resources/Connector.config" todir="${project.basedir}/Release"/>
+                				<copy file="${project.basedir}/src/main/resources/Connector.config" todir="${release.dir}"/>
 							</target>
 						</configuration>
 						<goals>
