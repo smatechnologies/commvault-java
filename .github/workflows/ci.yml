@@ -39,12 +39,12 @@ jobs:
       # Prepare the Windows distribution folder for Zip
       - name: Create Windows Folder
         run: |
-          mkdir Commvault_Windows
-          mv commvault-dist/jdk-* Commvault_Windows/java
-          cp commvault-dist/CVault.exe Commvault_Windows/
-          cp commvault-dist/EncryptValue.exe Commvault_Windows/
-          cp commvault-dist/Connector.config Commvault_Windows/
-          cp documentation/CommVault.docx Commvault_Windows/
+          mkdir CommVault_Windows
+          mv commvault-dist/jdk-* CommVault_Windows/java
+          cp commvault-dist/CVault.exe CommVault_Windows/
+          cp commvault-dist/EncryptValue.exe CommVault_Windows/
+          cp commvault-dist/Connector.config CommVault_Windows/
+          cp documentation/CommVault.docx CommVault_Windows/
           
       # Zip the folder that contains all binaries and configuration to run on Windows (including Java)    
       - name: Zip Windows Folder
