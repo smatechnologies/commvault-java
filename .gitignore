@@ -1,7 +1,7 @@
-/connector/target/
-/connector/.settings
-/connector/.classpath
-/connector/.project
-/connector/dependency-reduced-pom.xml
-/emplugin/bin/
-
+.DS_Store
+Release/
+commvault-dist/
+.classpath
+.project
+.settings/
+target/
