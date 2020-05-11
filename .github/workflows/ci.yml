@@ -47,12 +47,13 @@ jobs:
       - name: Create Windows Folder
         run: |
           mkdir CommVault_Windows
+          mkdir CommVault_Windows/emplugins
           mkdir CommVault_Windows/xmlbackupdefinitions/
           mv commvault-dist/jdk-* CommVault_Windows/java
           cp commvault-dist/CVault.exe CommVault_Windows/
           cp commvault-dist/EncryptValue.exe CommVault_Windows/
           cp commvault-dist/Connector.config CommVault_Windows/
-          cp commvault-dist/com.sma.ui.core.jobdetails.commvault_1.0.0.202003180712.jar CommVault_Windows/
+          cp commvault-dist/com.sma.ui.core.jobdetails.commvault_1.0.0.202003180712.jar CommVault_Windows/emplugins
           cp commvault-dist/file_system.xml CommVault_Windows/xmlbackupdefinitions/
           cp commvault-dist/script_incr.xml CommVault_Windows/xmlbackupdefinitions/
           cp commvault-dist/script_synthetic_full.xml CommVault_Windows/xmlbackupdefinitions/
