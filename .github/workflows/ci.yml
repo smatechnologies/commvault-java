@@ -1,3 +1,13 @@
+# Workflow triggering
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - 'v*'
+
+name: Commvault
+
 jobs:
   ###########
   # PACKAGE #
