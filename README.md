@@ -17,7 +17,7 @@ For information on using the Connector and configuring the connector see the
 associated documentation.
 
 ### Installation
-Download the commvalut.zip file from desired Release by selecting and saving the file.
+Download the commVault_Windows.zip file from the desired Release by selecting and saving the file.
 After download create an installation folder (i.e c:\connectors\commvault) and extract the 
 downloaded file into this directory.
  
