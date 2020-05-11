@@ -9,7 +9,7 @@ SMA Technologies assumes no liability for damage caused by the usage of any of t
 # Prerequisites
 
 - Requires Commvault web services which is provided by Commvault version 11. 
-- Requires **Java version 8**.
+- Requires **Java version 11**.
   - Embedded OpenJDK included in installation zip file.
 
 # Instructions
