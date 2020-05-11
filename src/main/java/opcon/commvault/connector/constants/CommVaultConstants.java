@@ -33,7 +33,7 @@ public interface CommVaultConstants {
 	public static final String SINGLE_QUOTE = "'";
 	public static final String UNDERSCORE = "_";
 
-	public static final String SOFTWARE_VERSION = "2.0.0";
+	public static final String SOFTWARE_VERSION = "2.0.1";
 
 	public static final String SYSTEM_USER_DIRECTORY = "user.dir";
 	public static final String TRUE = "True";
