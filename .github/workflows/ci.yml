@@ -51,7 +51,7 @@ jobs:
           mkdir CommVault_Windows/xmlbackupdefinitions/
           mv connector/commvault-dist/jdk-* CommVault_Windows/java
           cp connector/commvault-dist/CVault.exe CommVault_Windows/
-          cp connector/commvault-dist/EncryptValue.exe CommVault_Windows/
+          cp connector/commvault-dist/Encrypt.exe CommVault_Windows/
           cp connector/commvault-dist/Connector.config CommVault_Windows/
           cp connector/commvault-dist/com.sma.ui.core.jobdetails.commvault_1.0.0.202003180712.jar CommVault_Windows/emplugins
           cp connector/commvault-dist/file_system.xml CommVault_Windows/xmlbackupdefinitions/
