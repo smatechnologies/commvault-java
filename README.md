@@ -1,6 +1,6 @@
 # Commvault Java
 Connector to Commvault that allows OpCon to submit backup requests to Commvault through the Web Services API.
-[diagrm](/docs/images/Connector_overview.png)
+![diagrm](/docs/images/Connector_overview.png)
 
 The job definitions are entered as Windows jobs using the Commvault Job Sub-Type. When the job is scheduled by OpCon the arguments are passed to the connector and a completion code is returned.
 
