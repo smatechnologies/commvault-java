@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<project name="maven-antrun-" default="main"  >
-<target name="main">
-  <copy file="C:\smagithub\commvault-java/src/main/resources/Connector.config" todir="C:\smagithub\commvault-java/commvault-dist"/>
-  <copy file="C:\smagithub\commvault-java/src/main/resources/com.sma.ui.core.jobdetails.commvault*" todir="C:\smagithub\commvault-java/commvault-dist"/>
-</target>
-</project>
