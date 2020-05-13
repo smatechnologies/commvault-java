@@ -27,9 +27,9 @@ jobs:
         with: 
           java-version: 11
           
-      # Build the maven project, output into ./commvault-dist/
+      # Build the maven project, output into ./connector/commvault-dist/
       - name: Build
-        run: mvn clean package
+        run: mvn clean package --file connector/pom.xml
       
       ####################################
       # Create Windows Distribution File #
@@ -41,7 +41,7 @@ jobs:
         
       # Extract Windows JRE
       - name: Extract JRE into Java
-        run: 7z x java.zip -o./commvault-dist/
+        run: 7z x java.zip -o./connector/commvault-dist/
       
       # Prepare the Windows distribution folder for Zip
       - name: Create Windows Folder
@@ -49,15 +49,15 @@ jobs:
           mkdir CommVault_Windows
           mkdir CommVault_Windows/emplugins
           mkdir CommVault_Windows/xmlbackupdefinitions/
-          mv commvault-dist/jdk-* CommVault_Windows/java
-          cp commvault-dist/CVault.exe CommVault_Windows/
-          cp commvault-dist/EncryptValue.exe CommVault_Windows/
-          cp commvault-dist/Connector.config CommVault_Windows/
-          cp commvault-dist/com.sma.ui.core.jobdetails.commvault_1.0.0.202003180712.jar CommVault_Windows/emplugins
-          cp commvault-dist/file_system.xml CommVault_Windows/xmlbackupdefinitions/
-          cp commvault-dist/script_incr.xml CommVault_Windows/xmlbackupdefinitions/
-          cp commvault-dist/script_synthetic_full.xml CommVault_Windows/xmlbackupdefinitions/
-          cp documentation/CommVault.docx CommVault_Windows/
+          mv connector/commvault-dist/jdk-* CommVault_Windows/java
+          cp connector/commvault-dist/CVault.exe CommVault_Windows/
+          cp connector/commvault-dist/EncryptValue.exe CommVault_Windows/
+          cp connector/commvault-dist/Connector.config CommVault_Windows/
+          cp connector/commvault-dist/com.sma.ui.core.jobdetails.commvault_1.0.0.202003180712.jar CommVault_Windows/emplugins
+          cp connector/commvault-dist/file_system.xml CommVault_Windows/xmlbackupdefinitions/
+          cp connector/commvault-dist/script_incr.xml CommVault_Windows/xmlbackupdefinitions/
+          cp connector/commvault-dist/script_synthetic_full.xml CommVault_Windows/xmlbackupdefinitions/
+          cp docs/CommVault.docx CommVault_Windows/
           
       # Zip the folder that contains all binaries and configuration to run on Windows (including Java)    
       - name: Zip Windows Folder
@@ -69,13 +69,19 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: CVault.exe
-          path: commvault-dist/CVault.exe
+          path: connector/commvault-dist/CVault.exe
       
       # Upload the ecryptvalue.exe binary file as artifact
       - uses: actions/upload-artifact@v1
         with:
-          name: EncryptValue.exe
-          path: commvault-dist/EncryptValue.exe
+          name: Encrypt.exe
+          path: connector/commvault-dist/Encrypt.exe
+
+      # Upload the job sub-type binary file as artifact
+      - uses: actions/upload-artifact@v1
+        with:
+          name: com.sma.ui.core.jobdetails.commvault_1.0.0.202003180712.jar
+          path: connector/commvault-dist/com.sma.ui.core.jobdetails.commvault_1.0.0.202003180712.jar
 
       # Upload the CommVault_Windows.zip file as artifact
       - uses: actions/upload-artifact@v1

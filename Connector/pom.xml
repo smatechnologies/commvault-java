@@ -257,7 +257,7 @@
             			</goals>
             			<configuration>
               				<headerType>console</headerType>
-              				<outfile>${release.dir}/EncryptValue.exe</outfile>
+              				<outfile>${release.dir}/Encrypt.exe</outfile>
 							<jar>${project.build.directory}/${project.artifactId}.jar</jar>
 			        		<classPath>
 			          			<mainClass>opcon.commvault.connector.impl.EncryptValue</mainClass>

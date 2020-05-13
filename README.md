@@ -1,5 +1,17 @@
 # Commvault Java
 Connector to Commvault that allows OpCon to submit backup requests to Commvault through the Web Services API.
+[diagrm](/docs/images/Connector_overview.png)
+
+The job definitions are entered as Windows jobs using the Commvault Job Sub-Type. When the job is scheduled by OpCon the arguments are passed to the connector and a completion code is returned.
+
+The connector supports the following backup types by default.
+
+- **DIFFERENTIAL**
+- **INCREMENTAL**
+- **FULL**
+- **PRE_SELECT**
+- **SYNTHETIC_FULL**
+
 
 # Disclaimer
 No Support and No Warranty are provided by SMA Technologies for this project and related material. The use of this project's files is on your own risk.
@@ -13,14 +25,9 @@ SMA Technologies assumes no liability for damage caused by the usage of any of t
   - Embedded OpenJDK included in installation zip file.
 
 # Instructions
-For information on using the Connector and configuring the connector see the
-associated documentation.
+For detailed information see the commvault.md documentation.
 
-### Installation
-Download the commvalut.zip file from desired Release by selecting and saving the file.
-After download create an installation folder (i.e c:\connectors\commvault) and extract the 
-downloaded file into this directory.
- 
+
 # License
 Copyright 2019 SMA Technologies
 
