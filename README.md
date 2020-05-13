@@ -12,7 +12,6 @@ The connector supports the following backup types by default.
 - **PRE_SELECT**
 - **SYNTHETIC_FULL**
 
-
 # Disclaimer
 No Support and No Warranty are provided by SMA Technologies for this project and related material. The use of this project's files is on your own risk.
 
