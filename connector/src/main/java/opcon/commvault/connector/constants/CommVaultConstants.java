@@ -50,25 +50,20 @@ public interface CommVaultConstants {
 	public static final String ALLOW_RESTRICTED_HEADERS_SYSTEM_PROPERTY_NAME = "sun.net.http.allowRestrictedHeaders";
 	
 	public static final String CONNECTOR_HEADER = "CONNECTOR";
-	public static final String CONNECTOR_NAME = "CONNECTOR_NAME";
-	public static final String CONNECTOR_SERVER_ADDRESS = "CONNECTOR_SERVER_ADDRESS";
-	public static final String CONNECTOR_SERVER_NAME = "CONNECTOR_SERVER_NAME";
-	public static final String CONNECTOR_USE_TLS = "CONNECTOR_USE_TLS";
-	public static final String CONNECTOR_COMM_VAULT_USER_DOMAIN = "CONNECTOR_COMM_VAULT_USER_DOMAIN";
-	public static final String CONNECTOR_COMM_VAULT_USER = "CONNECTOR_COMM_VAULT_USER";
-	public static final String CONNECTOR_COMM_VAULT_USER_PASSWORD = "CONNECTOR_COMM_VAULT_USER_PASSWORD";
-	public static final String CONNECTOR_SESSION_RETRY_VALUE = "CONNECTOR_SESSION_RETRY_VALUE";
-	public static final String CONNECTOR_POLL_INTERVAL = "CONNECTOR_POLL_INTERVAL";
-	public static final String CONNECTOR_INITIAL_POLL_DELAY = "CONNECTOR_INITIAL_POLL_DELAY";
-	public static final String CONNECTOR_MSLSAM_ROOT_DIRECTORY = "CONNECTOR_MSLSAM_ROOT_DIRECTORY";
-	public static final String CONNECTOR_DEBUG = "CONNECTOR_DEBUG";
+	public static final String CONNECTOR_NAME = "NAME";
+	public static final String CONNECTOR_MSLSAM_ROOT_DIRECTORY = "MSLSAM_ROOT_DIRECTORY";
+	public static final String CONNECTOR_SESSION_RETRY_VALUE = "SESSION_RETRY_VALUE";
+	public static final String CONNECTOR_POLL_INTERVAL = "POLL_INTERVAL";
+	public static final String CONNECTOR_INITIAL_POLL_DELAY = "INITIAL_POLL_DELAY";
+	public static final String CONNECTOR_DEBUG = "DEBUG";
 
-	public static final String CONNECTOR_OPCON_API_HEADER = "OPCON API";
-	public static final String CONNECTOR_OPCON_API_SERVER = "SERVER";
-	public static final String CONNECTOR_OPCON_API_PORT = "PORT";
-	public static final String CONNECTOR_OPCON_API_USES_TLS = "USES_TLS";
-	public static final String CONNECTOR_OPCON_API_USER = "USER";
-	public static final String CONNECTOR_OPCON_API_PASSWORD = "PASSWORD";
+	public static final String COMMVAULT_HEADER = "CONNECTOR";
+	public static final String COMMVAULT_SERVER_ADDRESS = "SERVER_ADDRESS";
+	public static final String COMMVAULT_SERVER_NAME = "SERVER_NAME";
+	public static final String COMMVAULT_USE_TLS = "USE_TLS";
+	public static final String COMMVAULT_COMM_VAULT_USER_DOMAIN = "USER_DOMAIN";
+	public static final String COMMVAULT_COMM_VAULT_USER = "USER";
+	public static final String COMMVAULT_COMM_VAULT_USER_PASSWORD = "USER_PASSWORD";
 
 	public static final String DATA_TYPE_TEXT_PLAIN = "text/plain";
 	public static final String DATA_TYPE_TEXT_HTML = "text/html";

@@ -12,7 +12,6 @@ import opcon.commvault.connector.configuration.CommVaultConfiguration;
 import opcon.commvault.connector.constants.CommVaultConstants;
 import opcon.commvault.connector.constants.CommVaultMessages;
 
-import org.ini4j.Ini;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,19 +31,6 @@ public class CommVaultUtilities {
 		
 		try {
 			config.setConnectorName(iniPrefs.node(CommVaultConstants.CONNECTOR_HEADER).get(CommVaultConstants.CONNECTOR_NAME, null));
-			config.setServerAddress(iniPrefs.node(CommVaultConstants.CONNECTOR_HEADER).get(CommVaultConstants.CONNECTOR_SERVER_ADDRESS, null));
-			config.setServerName(iniPrefs.node(CommVaultConstants.CONNECTOR_HEADER).get(CommVaultConstants.CONNECTOR_SERVER_NAME, null));
-			String tls = iniPrefs.node(CommVaultConstants.CONNECTOR_HEADER).get(CommVaultConstants.CONNECTOR_USE_TLS, null);
-			if(tls.equalsIgnoreCase(CommVaultConstants.TRUE)) {
-				config.setUseTls(true);
-			}
-			config.setCommVaultUserDomain(iniPrefs.node(CommVaultConstants.CONNECTOR_HEADER).get(CommVaultConstants.CONNECTOR_COMM_VAULT_USER_DOMAIN, null));
-			String user = iniPrefs.node(CommVaultConstants.CONNECTOR_HEADER).get(CommVaultConstants.CONNECTOR_COMM_VAULT_USER, null);
-			config.setCommVaultUser(decryptEncodedPassword(user));
-			String password = iniPrefs.node(CommVaultConstants.CONNECTOR_HEADER).get(CommVaultConstants.CONNECTOR_COMM_VAULT_USER_PASSWORD, null);
-			config.setCommVaultUserPassword(decryptEncodedPassword(password));
-			config.setRootDirectory(rootDirectory);
-			config.setXmlBackupDefinitionsDirectory(rootDirectory + File.separator + CommVaultConstants.XML_BACKUP_DEFINITIONS_DIRECTORY_NAME);
 			config.setMsAgentRootDirectory(iniPrefs.node(CommVaultConstants.CONNECTOR_HEADER).get(CommVaultConstants.CONNECTOR_MSLSAM_ROOT_DIRECTORY, null));
 			String sessionRetryValue = iniPrefs.node(CommVaultConstants.CONNECTOR_HEADER).get(CommVaultConstants.CONNECTOR_SESSION_RETRY_VALUE, null);
 			if(sessionRetryValue != null) {
@@ -62,6 +48,20 @@ public class CommVaultUtilities {
 			if(debug.equalsIgnoreCase(CommVaultConstants.DEBUG_ON)) {
 				config.setDebug(true);
 			}
+			
+			config.setServerAddress(iniPrefs.node(CommVaultConstants.COMMVAULT_HEADER).get(CommVaultConstants.COMMVAULT_SERVER_ADDRESS, null));
+			config.setServerName(iniPrefs.node(CommVaultConstants.COMMVAULT_HEADER).get(CommVaultConstants.COMMVAULT_SERVER_NAME, null));
+			String tls = iniPrefs.node(CommVaultConstants.COMMVAULT_HEADER).get(CommVaultConstants.COMMVAULT_USE_TLS, null);
+			if(tls.equalsIgnoreCase(CommVaultConstants.TRUE)) {
+				config.setUseTls(true);
+			}
+			config.setCommVaultUserDomain(iniPrefs.node(CommVaultConstants.COMMVAULT_HEADER).get(CommVaultConstants.COMMVAULT_COMM_VAULT_USER_DOMAIN, null));
+			String user = iniPrefs.node(CommVaultConstants.COMMVAULT_HEADER).get(CommVaultConstants.COMMVAULT_COMM_VAULT_USER, null);
+			config.setCommVaultUser(decryptEncodedPassword(user));
+			String password = iniPrefs.node(CommVaultConstants.COMMVAULT_HEADER).get(CommVaultConstants.COMMVAULT_COMM_VAULT_USER_PASSWORD, null);
+			config.setCommVaultUserPassword(decryptEncodedPassword(password));
+			config.setRootDirectory(rootDirectory);
+			config.setXmlBackupDefinitionsDirectory(rootDirectory + File.separator + CommVaultConstants.XML_BACKUP_DEFINITIONS_DIRECTORY_NAME);
 
 			if(config.isDebug()) {
 				LOG.info(CommVaultMessages.SeparatorLine);
@@ -71,7 +71,6 @@ public class CommVaultUtilities {
 				LOG.info(MessageFormat.format(CommVaultMessages.DebugLine,"Using TLS             {" + config.isUseTls() + "}"));
 				LOG.info(MessageFormat.format(CommVaultMessages.DebugLine,"CommVault User Domain {" + config.getCommVaultUserDomain() + "}"));
 				LOG.info(MessageFormat.format(CommVaultMessages.DebugLine,"CommVault User        {" + config.getCommVaultUser() + "}"));
-				LOG.info(MessageFormat.format(CommVaultMessages.DebugLine,"CommVault Password    {" + config.getCommVaultUserPassword() + "}"));
 				LOG.info(MessageFormat.format(CommVaultMessages.DebugLine,"root directory        {" + config.getRootDirectory() + "}"));
 				LOG.info(MessageFormat.format(CommVaultMessages.DebugLine,"xml def directory     {" + config.getXmlBackupDefinitionsDirectory() + "}"));
 				LOG.info(MessageFormat.format(CommVaultMessages.DebugLine,"session retry         {" + String.valueOf(config.getSessionRetryValue()) + "}"));

@@ -53,7 +53,7 @@ jobs:
           cp connector/commvault-dist/CVault.exe CommVault_Windows/
           cp connector/commvault-dist/Encrypt.exe CommVault_Windows/
           cp connector/commvault-dist/Connector.config CommVault_Windows/
-          cp connector/commvault-dist/com.sma.ui.core.jobdetails.commvault_1.0.0.202003180712.jar CommVault_Windows/emplugins
+          cp connector/commvault-dist/com.sma.ui.core.jobdetails.commvault_1.0.0.202005140857.jar CommVault_Windows/emplugins
           cp connector/commvault-dist/file_system.xml CommVault_Windows/xmlbackupdefinitions/
           cp connector/commvault-dist/script_incr.xml CommVault_Windows/xmlbackupdefinitions/
           cp connector/commvault-dist/script_synthetic_full.xml CommVault_Windows/xmlbackupdefinitions/
@@ -81,7 +81,7 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: com.sma.ui.core.jobdetails.commvault_1.0.0.202003180712.jar
-          path: connector/commvault-dist/com.sma.ui.core.jobdetails.commvault_1.0.0.202003180712.jar
+          path: connector/commvault-dist/com.sma.ui.core.jobdetails.commvault_1.0.0.202005140857.jar
 
       # Upload the CommVault_Windows.zip file as artifact
       - uses: actions/upload-artifact@v1
@@ -109,7 +109,7 @@ jobs:
       - name: Download job subtype
         uses: actions/download-artifact@v1
         with:
-          name: com.sma.ui.core.jobdetails.commvault_1.0.0.202003180712.jar
+          name: com.sma.ui.core.jobdetails.commvault_1.0.0.202005140857.jar
           path: ./
 
       - name: Create Release
@@ -144,6 +144,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: com.sma.ui.core.jobdetails.commvault_1.0.0.202003180712.jar
-          asset_name: com.sma.ui.core.jobdetails.commvault_1.0.0.202003180712.jar
+          asset_path: com.sma.ui.core.jobdetails.commvault_1.0.0.202005140857.jar
+          asset_name: com.sma.ui.core.jobdetails.commvault_1.0.0.202005140857.jar
           asset_content_type: application/zip
