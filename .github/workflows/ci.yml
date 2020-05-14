@@ -57,7 +57,7 @@ jobs:
           cp connector/commvault-dist/file_system.xml CommVault_Windows/xmlbackupdefinitions/
           cp connector/commvault-dist/script_incr.xml CommVault_Windows/xmlbackupdefinitions/
           cp connector/commvault-dist/script_synthetic_full.xml CommVault_Windows/xmlbackupdefinitions/
-          cp docs/Commvault.md CommVault_Windows/
+          cp docs/commvault.md CommVault_Windows/
           
       # Zip the folder that contains all binaries and configuration to run on Windows (including Java)    
       - name: Zip Windows Folder
