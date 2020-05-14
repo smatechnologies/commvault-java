@@ -80,7 +80,7 @@ jobs:
       # Upload the job sub-type binary file as artifact
       - uses: actions/upload-artifact@v1
         with:
-          name: com.sma.ui.core.jobdetails.commvault_1.0.0.202003180712.jar
+          name: com.sma.ui.core.jobdetails.commvault_1.0.0.202005140857.jar
           path: connector/commvault-dist/com.sma.ui.core.jobdetails.commvault_1.0.0.202005140857.jar
 
       # Upload the CommVault_Windows.zip file as artifact
