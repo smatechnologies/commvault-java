@@ -26,7 +26,8 @@ Create a global property **CommvaultPath** that contains the full path of the in
 Create the OpCon global properties associated with the drop-down lists used when creating backup tasks.
 
 **CV_BACKUP_TYPES** Create the global property and add the values contained in **Backup File Types List** using a comma to separate them. The doubles quotes surrounding the values must be retained. These values will then be visible in the drop-down list.
-**CV_BACKUP_FILE_NAMESS** Create the global property and add the values contained in **Backup File Names List** using a comma to separate them. The doubles quotes surrounding the values must be retained. These values will then be visible in the drop-down list.
+
+**CV_BACKUP_FILE_NAMES** Create the global property and add the values contained in **Backup File Names List** using a comma to separate them. The doubles quotes surrounding the values must be retained. These values will then be visible in the drop-down list.
  
 ## Configuration
 The Commvault connector uses a configuration file **Connector.config** that contains the Commvault account information.
@@ -108,7 +109,7 @@ Arguments | Description
 ## AzureStorage Job Sub-Type
 The AzureStorage connector provides a Job Sub-Type that can be used to simplify job definitions within OpCon.
 
-![jobsubtype](/docs/images/commvault_subtype.PNG)
+![jobsubtype](/docs/images/commvault_sub_type.PNG)
 
 When using the Job Sub-Type, fill in the backup set name, the client name, the name of the xml template to use for the request and select the backup type from the drop-down list.
 
